@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+
+</head>
+<body>
+    <div class="intro">
+        <h1 class="logo-header">
+            <span class="logo" style="color: #00c3ff;">Welcome</span>
+            <span class="logo">To</span>
+            <span class="logo" style="color: #ff0000;">Cyber</span>
+            <span class="logo" style="color: #ff0000;">Security </span>
+            <span class="logo" style="color: #ff0000;">Hub</span>
+        </h1>
+
+    </div>
+    <div id="back">
+  
+        <a href="#header">
+         <img src="/images/home (3).png" alt="home"/>
+        </a>
+        </div>
+        <header id="header">
+            <h1>Cyber Security Hub</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home" onclick="createButton()">Home</a></li>
+                    <li><a href="#services" onclick="createButton()">Services</a></li>
+                    <li><a href="#about" onclick="createButton()">Passwords</a></li>
+                    <li><a href="#news" onclick="createButton()">News</a></li>
+                    <li><a href="#resources" onclick="createButton()">Resources</a></li>
+                    <li><a href="#contact" onclick="createButton()">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <section id="home">
+            <h2>Welcome to Cyber Security Hub</h2>
+            <p>Protecting your digital world with advanced security solutions.</p>
+        </section>
+    
+        <section id="services">
+            <h2>Our Services</h2>
+            <ul>
+                <li> <span>Penetration Testing </span> - Simulating cyberattacks to identify vulnerabilities.</li>
+                <li><span>Security Audits </span> - Comprehensive assessment of security policies and infrastructure.</li>
+                <li><span>Malware Analysis </span> - Investigating and mitigating malicious software threats.</li>
+                <li><span>Cyber Awareness Training </span> - Educating individuals and businesses on cybersecurity practices.</li>
+                <li><span>Network Security </span> - Securing network architecture to prevent unauthorized access.</li>
+                <li><span>Incident Response </span> - Rapid response strategies for cyber incidents and breaches.</li>
+            </ul>
+        </section>
+    
+        <section id="about">
+            <h2>Check Your Password Strength</h2>
+            <button onclick="showPasswordInput()">Check Password Strength</button>
+        <div id="password-container">
+            <input type="text" id="password" placeholder="Enter password" oninput="checkStrength()">
+            <p id="strength-message"></p>
+        </div>
+        </section>
+    
+        <section id="news">
+            <h2>Latest Cybersecurity News</h2>
+            <p>Stay updated with the latest trends, threats, and security measures in the cybersecurity world.</p>
+            <article>
+                <h3 style="color: #ff0000;">Major Data Breach in 2025</h3>
+                <p>Recent reports indicate a massive data breach affecting millions of users worldwide. Experts emphasize the importance of strong passwords and multi-factor authentication.</p>
+            </article>
+            <article>
+                <h3 style="color: #ff0000;">New Malware Threat Discovered</h3>
+                <p>Security researchers have identified a new type of malware that targets financial institutions. Organizations are urged to update their security protocols.</p>
+            </article>
+        </section>
+    
+        <section id="resources">
+            <h2>Cybersecurity Resources</h2>
+            <ul>
+                <li><a href="#best-practices">Best Practices for Secure Browsing</a></li>
+                <li><a href="#cyber-tools">Top Cybersecurity Tools</a></li>
+                <li><a href="#incident-guide">Incident Response Guide</a></li>
+                <li><a href="#threat-intelligence">Cyber Threat Intelligence</a></li>
+            </ul>
+    
+            <div id="best-practices">
+                <h3>Best Practices for Secure Browsing</h3>
+                <p>Use strong, unique passwords and enable two-factor authentication. Avoid clicking on suspicious links and always verify website authenticity.</p>
+            </div>
+    
+            <div id="cyber-tools">
+                <h3>Top Cybersecurity Tools</h3>
+                <p>Recommended tools include firewalls, antivirus software, VPNs, and password managers for enhanced security.</p>
+            </div>
+    
+            <div id="incident-guide">
+                <h3>Incident Response Guide</h3>
+                <p>Steps to follow in case of a cybersecurity incident: Identify, contain, eradicate, recover, and review the breach.</p>
+            </div>
+    
+            <div id="threat-intelligence">
+                <h3>Cyber Threat Intelligence</h3>
+                <p>Stay ahead of cybercriminals by monitoring emerging threats and implementing proactive security measures.</p>
+            </div>
+        </section>
+    <!--  -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+
+    <form action="/submitForm" method="post" th:object="${user}" id="contactForm">
+
+        <label>Name:</label>
+        <input type="text" th:field="*{name}" id="name" required /><br/>
+
+        <label>Email:</label>
+        <input type="email" th:field="*{email}" id="email" required /><br/>
+
+        <!-- New message field -->
+        <label>Message:</label>
+        <textarea th:field="*{message}" id="message" rows="4" cols="50" placeholder="Enter your message here..." required></textarea><br/>
+
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+    <div id="back2">
+        <a href="/quiz"><img src="/images/choose (2).png" alt="quiz section"/></a>
+        </div>
+        <!--  -->
+    <footer>
+        <p>&copy; 2025 Cyber Security Hub. All rights reserved.</p>
+        <p style="font-size: 10px; color: #fff;"><a href="https://wa.me/c/919770044129">Developed by S2 Services</a></p>
+    </footer>
+    <script type="text/javascript" src="/js/scripts.js"></script>
+</body>
+</html>
